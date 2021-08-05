@@ -54,19 +54,15 @@ dependencies {
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.activity:activity-compose:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation("androidx.activity:activity-compose:1.3.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha03")
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha05")
-
-    //Retrofit
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
 
     //Fuel
     implementation("com.github.kittinunf.fuel:fuel:2.3.1")
