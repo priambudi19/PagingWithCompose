@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Paging with Compose</string>
+    <string name="footer">This is from XML📃 \nPhotos By 🖼Picsum</string>
 </resources>
