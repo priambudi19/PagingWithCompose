@@ -2,6 +2,7 @@ val composeVersion = "1.0.0"
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("plugin.serialization")
 }
 
 android {
@@ -60,10 +61,17 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha02")
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha05")
 
     //Retrofit
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    //Fuel
+    implementation("com.github.kittinunf.fuel:fuel:2.3.1")
+    implementation("com.github.kittinunf.fuel:fuel-android:2.3.1")
+    implementation ("com.beust:klaxon:5.5")
 
     //Image Loader
     implementation("io.coil-kt:coil-compose:1.3.0")
@@ -76,5 +84,7 @@ dependencies {
 
     //System UI Controller
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.14.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+
 }
 

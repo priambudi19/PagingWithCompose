@@ -3,6 +3,7 @@
     package="com.priambudi19.pagingcompose">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -11,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PagingWithCompose">
+        <activity
+            android:name=".ui.info.InfoActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
