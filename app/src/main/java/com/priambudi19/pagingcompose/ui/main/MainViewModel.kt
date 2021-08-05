@@ -7,6 +7,7 @@ import com.priambudi19.pagingcompose.data.repository.MainRepository
 
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
-    fun getPhotos() = repository.getListPhotos().cachedIn(viewModelScope)
+
+    fun getPhotos() = repository.getListPhotosFuel().cachedIn(viewModelScope)
 
 }

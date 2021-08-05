@@ -1,21 +1,40 @@
 package com.priambudi19.pagingcompose.data.model
 
 
-import com.google.gson.annotations.SerializedName
+import com.beust.klaxon.Json
+import com.beust.klaxon.Klaxon
+import com.github.kittinunf.fuel.core.ResponseDeserializable
+
 
 data class PicsumPhotos(
-    @SerializedName("author")
+    @Json("author")
     var author: String = "",
-    @SerializedName("download_url")
+    @Json("download_url")
     var downloadUrl: String = "",
-    @SerializedName("height")
+    @Json("height")
     var height: Int = 0,
-    @SerializedName("id")
+    @Json("id")
     var id: String = "",
-    @SerializedName("url")
+    @Json("url")
     var url: String = "",
-    @SerializedName("width")
+    @Json("width")
     var width: Int = 0
-)
+) {
 
-typealias PicsumResponse = ArrayList<PicsumPhotos>
+    object DeserializeList : ResponseDeserializable<List<PicsumPhotos>> {
+        override fun deserialize(content: String): List<PicsumPhotos>? {
+            return Klaxon().parseArray(content)
+        }
+    }
+
+    object Deserialize : ResponseDeserializable<PicsumPhotos> {
+        override fun deserialize(content: String): PicsumPhotos? {
+            return Klaxon().parse(content)
+        }
+    }
+
+}
+
+
+
+
