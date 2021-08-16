@@ -85,7 +85,7 @@ class InfoActivity : AppCompatActivity() {
                             style = TextStyle(textAlign = TextAlign.Center)
                         )
                         Text(
-                            text = "with Interopability feature😜",
+                            text = "with Interoperability feature😜",
                             style = TextStyle(textAlign = TextAlign.Center)
                         )
                     }
