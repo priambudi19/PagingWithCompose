@@ -62,11 +62,15 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha03")
-    implementation("androidx.navigation:navigation-compose:2.4.0-alpha05")
+
+    //Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha06")
 
     //Fuel
     implementation("com.github.kittinunf.fuel:fuel:2.3.1")
     implementation("com.github.kittinunf.fuel:fuel-android:2.3.1")
+
+    //Klaxon Serialization
     implementation ("com.beust:klaxon:5.5")
 
     //Image Loader
@@ -80,7 +84,7 @@ dependencies {
 
     //System UI Controller
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.14.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+
 
 }
 

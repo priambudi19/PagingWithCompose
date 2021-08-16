@@ -6,6 +6,6 @@ import com.priambudi19.pagingcompose.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface MainRepository {
-     fun getListPhotosFuel() : Flow<PagingData<PicsumPhotos>>
+     fun getListPhotos() : Flow<PagingData<PicsumPhotos>>
      fun getDetail(id:Int) : Flow<Resource<PicsumPhotos>>
 }

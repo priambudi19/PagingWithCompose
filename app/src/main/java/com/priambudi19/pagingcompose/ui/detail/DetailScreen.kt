@@ -10,6 +10,7 @@ import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
@@ -21,11 +22,11 @@ import com.priambudi19.pagingcompose.util.Resource
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun DetailScreen(id: String?,context: Context) {
+fun DetailScreen(id: String?, context: Context) {
     val viewModel: DetailViewModel = getViewModel()
-    val photo by viewModel.getDetail(id!!.toInt()).collectAsState(Resource.Loading())
+    val photo by remember { viewModel.getDetail(id!!.toInt()) }.collectAsState(Resource.Loading())
     Box(modifier = Modifier.fillMaxSize()) {
-        when(val resource = photo){
+        when (val resource = photo) {
             is Resource.Loading -> {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
@@ -35,16 +36,20 @@ fun DetailScreen(id: String?,context: Context) {
             is Resource.Success -> {
                 resource.data.let {
                     Column(
-                        modifier =Modifier.padding(16.dp)
+                        modifier = Modifier.padding(16.dp)
                     ) {
                         PhotosItem(photos = it!!)
-                        Text(modifier = Modifier.fillMaxWidth(),text = "Source :",textAlign = TextAlign.Center)
+                        Text(
+                            modifier = Modifier.fillMaxWidth(),
+                            text = "Source :",
+                            textAlign = TextAlign.Center
+                        )
                         TextButton(onClick = {
                             val i = Intent(Intent.ACTION_VIEW)
                             i.setData(Uri.parse(it.url))
                             context.startActivity(i)
                         }) {
-                            Text(text = it.url,textAlign = TextAlign.Center)
+                            Text(text = it.url, textAlign = TextAlign.Center)
                         }
                     }
                 }

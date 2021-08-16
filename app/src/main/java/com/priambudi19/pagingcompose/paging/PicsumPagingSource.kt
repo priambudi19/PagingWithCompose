@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
 
-class PicsumFuelPagingSource(private val picsumService: PicsumService) :
+class PicsumPagingSource(private val picsumService: PicsumService) :
     PagingSource<Int, PicsumPhotos>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PicsumPhotos> =

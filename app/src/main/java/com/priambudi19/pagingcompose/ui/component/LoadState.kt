@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.priambudi19.pagingcompose.R
@@ -90,6 +91,68 @@ fun Retry(onClick: () -> Unit) {
             )
             Spacer(modifier = Modifier.height(16.dp))
             Button(modifier = Modifier.align(Alignment.CenterHorizontally), onClick = onClick) {
+                Text(text = "Retry")
+            }
+        }
+    }
+}
+
+@Composable
+@Preview
+fun RetryPreview() {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+            .padding(vertical = 24.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Column {
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "Something went wrong",
+                color = Color.Gray,
+                fontSize = 18.sp,
+                maxLines = 1,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(modifier = Modifier.align(Alignment.CenterHorizontally), onClick = {}) {
+                Text(text = "Retry")
+            }
+        }
+    }
+}
+
+
+
+@Composable
+@Preview
+fun ErrorViewPreview() {
+    Box(
+        modifier = Modifier.fillMaxWidth().height(300.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column {
+            Image(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(150.dp),
+                painter = painterResource(id = R.drawable.ic_error),
+                contentDescription = "",
+                contentScale = ContentScale.Fit
+            )
+
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "Something went wrong",
+                color = Color.Gray,
+                fontSize = 18.sp,
+                maxLines = 1,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(modifier = Modifier.align(Alignment.CenterHorizontally), onClick = {}) {
                 Text(text = "Retry")
             }
         }
